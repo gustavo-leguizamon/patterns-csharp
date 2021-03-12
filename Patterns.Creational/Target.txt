@@ -1,0 +1,3 @@
+﻿- Simplify object creation
+- Creation decoupled from the rest of the software implementation 
+- Encapsulate knowledge of the data types used. Work with interfaces. Hide like an object is created.
