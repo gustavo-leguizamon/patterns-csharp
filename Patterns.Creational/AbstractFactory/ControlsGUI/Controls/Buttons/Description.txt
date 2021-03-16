@@ -1,0 +1,1 @@
+﻿- All products families have the same varieties (MacOS/Windows).

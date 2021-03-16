@@ -1,0 +1,5 @@
+﻿- Provides an interface that delegates the creation of a set of objects that have similar characteristics, without having to know how to create them. 
+
+- Abstract Factory assumes that you have several families of products,
+ * structured into separate class hierarchies. All products of
+ * the same family have the common interface.
