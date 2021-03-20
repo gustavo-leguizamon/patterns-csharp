@@ -1,0 +1,7 @@
+﻿PROPOSE
+* Define a family of algorithms, encapsulate each of them and make them interchangeable. It allows an algorithm to vary independently of the users who use it.
+
+USE
+- When many related classes differ only in their behavior.
+- When you want to configure a class with a certain behavior, there are many possible ones.
+- When many variants of the same algorithm are needed.

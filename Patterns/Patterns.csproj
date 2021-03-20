@@ -6,6 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Patterns.Behavior\Patterns.Behavior.csproj" />
     <ProjectReference Include="..\Patterns.Creational\Patterns.Creational.csproj" />
   </ItemGroup>
 

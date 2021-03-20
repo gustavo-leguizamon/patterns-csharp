@@ -1,4 +1,6 @@
-﻿using Patterns.Creational.AbstractFactory.ControlsGUI;
+﻿using Patterns.Behavior.Strategy.DuckSimulator.Behavior;
+using Patterns.Behavior.Strategy.DuckSimulator.Client;
+using Patterns.Creational.AbstractFactory.ControlsGUI;
 using Patterns.Creational.AbstractFactory.ControlsGUI.Enums;
 using Patterns.Creational.AbstractFactory.ControlsGUI.Factories;
 using Patterns.Creational.AbstractFactory.ControlsGUI.Interfaces.Factories;
@@ -10,10 +12,53 @@ namespace Patterns
     {
         static void Main(string[] args)
         {
-            ControlsGUIApplication app = ConfigureControlsGUIApplication();
-            app.Paint();
+            #region Behavior
+
+            #region Strategy
+
+            StrategyDuckSimulator();
+
+            #endregion
+
+            #endregion
+
+
+            #region Creational
+
+            #region Abstract Factory
+
+            //ControlsGUIApplication app = ConfigureControlsGUIApplication();
+            //app.Paint();
+
+            #endregion
+
+            #endregion
+
         }
 
+        #region Behavior
+
+        private static void StrategyDuckSimulator()
+        {
+            Duck mallarDuck = new MallardDuck();
+            mallarDuck.Display();
+            mallarDuck.PerformFly();
+            mallarDuck.PerformQuack();
+            mallarDuck.Swim();
+
+            Duck decoyDuck = new DecoyDuck();
+            decoyDuck.Display();
+            decoyDuck.PerformFly();
+            decoyDuck.PerformQuack();
+            decoyDuck.Swim();
+            decoyDuck.SetFlyBehavior(new FlyRocketPowered());
+            decoyDuck.PerformFly();
+        }
+
+        #endregion
+
+
+        #region Creational
 
         #region Abstract Factory
 
@@ -38,6 +83,8 @@ namespace Patterns
             }
             return app;
         }
+
+        #endregion
 
         #endregion
     }
