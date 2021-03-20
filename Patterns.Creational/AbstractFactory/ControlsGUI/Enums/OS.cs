@@ -7,6 +7,7 @@ namespace Patterns.Creational.AbstractFactory.ControlsGUI.Enums
     public enum OS
     {
         Windows,
-        MAC
+        MAC,
+        Linux
     }
 }
