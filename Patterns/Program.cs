@@ -1,4 +1,6 @@
-﻿using Patterns.Behavior.Strategy.DuckSimulator.Behavior;
+﻿using Patterns.Behavior.Strategy.CharacterSimulator.Behavior;
+using Patterns.Behavior.Strategy.CharacterSimulator.Client;
+using Patterns.Behavior.Strategy.DuckSimulator.Behavior;
 using Patterns.Behavior.Strategy.DuckSimulator.Client;
 using Patterns.Creational.AbstractFactory.ControlsGUI;
 using Patterns.Creational.AbstractFactory.ControlsGUI.Enums;
@@ -16,7 +18,9 @@ namespace Patterns
 
             #region Strategy
 
-            StrategyDuckSimulator();
+            //StrategyDuckSimulator();
+
+            StrategyCharacterSimulator();
 
             #endregion
 
@@ -53,6 +57,15 @@ namespace Patterns
             decoyDuck.Swim();
             decoyDuck.SetFlyBehavior(new FlyRocketPowered());
             decoyDuck.PerformFly();
+        }
+
+        private static void StrategyCharacterSimulator()
+        {
+            Character king = new King();
+            king.Fight();
+            Console.WriteLine("Changing weapon...");
+            king.SetWeapon(new KnifeBehavior());
+            king.Fight();
         }
 
         #endregion
