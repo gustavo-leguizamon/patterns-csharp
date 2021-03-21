@@ -1,4 +1,7 @@
-﻿using Patterns.Behavior.Strategy.CharacterSimulator.Behavior;
+﻿using Patterns.Behavior.Observer.WeatherStation.Interfaces;
+using Patterns.Behavior.Observer.WeatherStation.Observers;
+using Patterns.Behavior.Observer.WeatherStation.Subjects;
+using Patterns.Behavior.Strategy.CharacterSimulator.Behavior;
 using Patterns.Behavior.Strategy.CharacterSimulator.Client;
 using Patterns.Behavior.Strategy.DuckSimulator.Behavior;
 using Patterns.Behavior.Strategy.DuckSimulator.Client;
@@ -16,11 +19,17 @@ namespace Patterns
         {
             #region Behavior
 
+            #region Observer
+
+            ObserverWeatherStation();
+
+            #endregion
+
             #region Strategy
 
             //StrategyDuckSimulator();
 
-            StrategyCharacterSimulator();
+            //StrategyCharacterSimulator();
 
             #endregion
 
@@ -41,6 +50,24 @@ namespace Patterns
         }
 
         #region Behavior
+
+        #region Observer
+
+        private static void ObserverWeatherStation()
+        {
+            WeatherData weatherData = new WeatherData();
+            new CurrentConditionsDisplay(weatherData);
+            new ForecastDisplay(weatherData);
+            new StaticsDisplay(weatherData);
+
+            weatherData.SetMeasurements(20, 40, 23);
+            weatherData.SetMeasurements(10, 50, 9);
+            weatherData.SetMeasurements(28, 3, 67);
+        }
+
+        #endregion
+
+        #region Strategy
 
         private static void StrategyDuckSimulator()
         {
@@ -67,6 +94,8 @@ namespace Patterns
             king.SetWeapon(new KnifeBehavior());
             king.Fight();
         }
+
+        #endregion
 
         #endregion
 
