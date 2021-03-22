@@ -59,6 +59,7 @@ namespace Patterns
             new CurrentConditionsDisplay(weatherData);
             new ForecastDisplay(weatherData);
             new StaticsDisplay(weatherData);
+            new HeatIndexDisplay(weatherData);
 
             weatherData.SetMeasurements(20, 40, 23);
             weatherData.SetMeasurements(10, 50, 9);
