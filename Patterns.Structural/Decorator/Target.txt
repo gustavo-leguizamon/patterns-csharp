@@ -1,0 +1,10 @@
+﻿PROPOSE
+* It assigns additional responsibilities to an object dynamically, providing a flexible alternative to subclassing for extending functionality.
+
+USE
+
+
+PROS
+- More flexibility than static inheritance. It provides a more flexible way to add responsibilities to objects. It is possible to add and remove responsibilities at runtime.
+- Avoid function-laden classes at the top of hierarchies.
+- Many small objects. It creates systems formed by many small objects very similar to each other.

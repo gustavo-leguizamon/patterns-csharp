@@ -9,6 +9,9 @@ using Patterns.Creational.AbstractFactory.ControlsGUI;
 using Patterns.Creational.AbstractFactory.ControlsGUI.Enums;
 using Patterns.Creational.AbstractFactory.ControlsGUI.Factories;
 using Patterns.Creational.AbstractFactory.ControlsGUI.Interfaces.Factories;
+using Patterns.Structural.Decorator.Beverages.Components;
+using Patterns.Structural.Decorator.Beverages.Decorators;
+using Patterns.Structural.Decorator.Beverages.Interfaces.Components;
 using System;
 
 namespace Patterns
@@ -21,7 +24,7 @@ namespace Patterns
 
             #region Observer
 
-            ObserverWeatherStation();
+            //ObserverWeatherStation();
 
             #endregion
 
@@ -35,7 +38,6 @@ namespace Patterns
 
             #endregion
 
-
             #region Creational
 
             #region Abstract Factory
@@ -47,6 +49,11 @@ namespace Patterns
 
             #endregion
 
+            #region Structural
+
+            DecoratorBeverages();
+
+            #endregion
         }
 
         #region Behavior
@@ -125,6 +132,35 @@ namespace Patterns
                 app = new ControlsGUIApplication(factory);
             }
             return app;
+        }
+
+        #endregion
+
+        #endregion
+
+        #region Structural
+
+        #region Decorator
+
+        private static void DecoratorBeverages()
+        {
+            //Order up an expresso, no condiments and print its description and cost
+            Beverage expresso = new Expresso();
+            Console.WriteLine($"Beverage: {expresso.GetDescription()}, $ {expresso.Cost()}");
+
+            //Make dark roast
+            Beverage darkRoastBeverage = new DarkRoast();
+            darkRoastBeverage = new Mocha(darkRoastBeverage); //Wrap it with a Mocha.
+            darkRoastBeverage = new Mocha(darkRoastBeverage); //Wrap it in a second Mocha.
+            darkRoastBeverage = new Whip(darkRoastBeverage); //Wrap it in a Whip.
+            Console.WriteLine($"Beverage: {darkRoastBeverage.GetDescription()}, $ {darkRoastBeverage.Cost()}");
+
+            //Finally, give us a HouseBlend with Soy, Mocha, and Whip
+            Beverage houseBlendBeverage = new HouseBlend();
+            houseBlendBeverage = new Soy(houseBlendBeverage);
+            houseBlendBeverage = new Mocha(houseBlendBeverage);
+            houseBlendBeverage = new Whip(houseBlendBeverage);
+            Console.WriteLine($"Beverage: {houseBlendBeverage.GetDescription()}, $ {houseBlendBeverage.Cost()}");
         }
 
         #endregion

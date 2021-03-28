@@ -8,6 +8,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Patterns.Behavior\Patterns.Behavior.csproj" />
     <ProjectReference Include="..\Patterns.Creational\Patterns.Creational.csproj" />
+    <ProjectReference Include="..\Patterns.Structural\Patterns.Structural.csproj" />
   </ItemGroup>
 
 </Project>
