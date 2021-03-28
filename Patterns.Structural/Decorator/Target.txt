@@ -8,3 +8,6 @@ PROS
 - More flexibility than static inheritance. It provides a more flexible way to add responsibilities to objects. It is possible to add and remove responsibilities at runtime.
 - Avoid function-laden classes at the top of hierarchies.
 - Many small objects. It creates systems formed by many small objects very similar to each other.
+
+CONS
+- It can result in a lot of small classes, which could make it difficult to understand
